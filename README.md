@@ -1,6 +1,6 @@
 # spacer blasting
 This tutorial will show you how to extract spacers from reads.
-##Required software
+## Required software
 BLAST+
 
 ## Preparing your dataset

@@ -9,7 +9,11 @@ You can using anything to do this such as the fastx toolkit. Or you can just use
 
 `sed -n '1~4s/^@/>/p;2~4p' fastqfile > fastafile`
 
-if you have a paired end reads separated as to fastas, just concatenate those files into a single fasta file. Now you gotta make a blastdatabase. This may take a few minutes.
+if you have a paired end reads separated as to fastas, just concatenate those files into a single fasta file. And if you have spacers in your headers they should be removed to make a blastdb. To do this just type:
+
+`sed 's/ /_/g' -i fastafile`
+
+Now you gotta make a blastdatabase. This may take a few minutes.
 
 `makeblastdb -in fastafile -dbtype nucl -parse_seqids`
 

@@ -2,6 +2,7 @@
 This tutorial will show you how to extract spacers from reads.
 ## Required software
 BLAST+
+python2
 
 ## Preparing your dataset
 After sequencing some genomes you'll have some paired end reads. You will trim the fastq files any way you want. You can use prinseq, trimmomatic, etc. After this, you will have to convert them into fasta files from fastq files. 

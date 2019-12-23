@@ -1,7 +1,8 @@
 # spacer blasting
-This tutorial will show you how to extract spacers from reads.
+This tutorial will show you how to extract spacers from reads which needs UNIX, macOS, or bash on Windows.
 ## Required software
 BLAST+
+
 python2
 
 ## Preparing your dataset

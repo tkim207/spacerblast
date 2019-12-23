@@ -6,7 +6,14 @@ BLAST+
 python2
 
 ## Preparing your dataset
-After sequencing some genomes you'll have some paired end reads. You will trim the fastq files any way you want. You can use prinseq, trimmomatic, etc. After this, you will have to convert them into fasta files from fastq files. 
+After sequencing some genomes you'll have some paired end reads. You will trim the fastq files any way you want. You can use prinseq, trimmomatic, etc. 
+
+trimmomatic -threads 4 -phred33 -trimlog trim.log sample_R1.fastq sample_R2.fastq sample_R1_trimmed.fastq sample_R1_trimmed_unpaired.fastq sample_R2_trimmed.fastq sample_R2_trimmed_unpaired.fastq ILLUMINACLIP:$adapters:$trimparams 2>sample_run_trimmomatic.log && rm trim.log;
+
+MISC_TrimParameters     2:36:10 LEADING:20 TRAILING:20 MAXINFO:50:0.97 MINLEN:50
+
+
+After this, you will have to convert them into fasta files from fastq files. 
 You can using anything to do this such as the fastx toolkit. Or you can just use this command:
 
 `sed -n '1~4s/^@/>/p;2~4p' fastqfile > fastafile`
